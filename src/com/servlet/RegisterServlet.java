@@ -1,4 +1,4 @@
-package com.sof3011.buoi3;
+package com.servlet;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
@@ -46,12 +46,7 @@ public class RegisterServlet extends HttpServlet {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
-		Session session = HibernateUtils.getSession();
-		session.beginTransaction();
-		session.save(entity);
-		session.getTransaction().commit();
-		
+
 		doGet(request, response);
 	}
 
