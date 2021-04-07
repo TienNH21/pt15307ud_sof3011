@@ -33,6 +33,7 @@
 	          <td>Email</td>
 	          <td>Gender</td>
 	          <td>Role</td>
+	          <td>No. Post</td>
 	          <td colspan="2">Action</td>
 	        </tr>
 	      </thead>
@@ -44,13 +45,16 @@
 	          <td>${ user.email }</td>
 	          <td>${ user.gender }</td>
 	          <td>${ user.role }</td>
+	          <td>${ user.posts.size() }</td>
 	          <td>
 	            <a
 	            	href="/PT15307UD/admin/user/edit?id=${ user.id }"
 	            	class="btn btn-primary">Update</a>
 	          </td>
 	          <td>
-	            <button class="btn btn-danger">Delete</button>
+	            <form action="/PT15307UD/users/delete?id=${ user.id }" method="POST">
+		            <button class="btn btn-danger">Delete</button>
+	            </form>
 	          </td>
 	        </tr>
       		</c:forEach>

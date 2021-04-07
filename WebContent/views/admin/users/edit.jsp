@@ -25,7 +25,7 @@
 	<div>
 		<form
 			method="POST"
-			action="/PT15307UD/register"
+			action="/PT15307UD/admin/user/edit?id=${ user.id }"
 			class="col-6 offset-3">
 			<div class="mb-3">
 			    <label for="email" class="form-label">Email</label>
