@@ -78,4 +78,24 @@ public class UserDAO {
 			this.hSession.getTransaction().rollback();
 		}
 	}
+	
+	public User login(String email, String password)
+	{
+		String hql = "SELECT objUser FROM User objUser "
+				+ "WHERE email = :email AND password = :password";
+		
+		Query query = this.hSession.createQuery(hql);
+		query.setParameter("email", email);
+		query.setParameter("password", password);
+		
+		try {
+			User entity = (User) query.getSingleResult();
+			
+			return entity;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return null;
+	}
 }

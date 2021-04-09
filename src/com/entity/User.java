@@ -45,7 +45,18 @@ public class User implements Serializable {
 
 	@Column(name="role")
 	private Integer role;
+
+	@Column(name="status")
+	private Integer status;
 	
+	public Integer getStatus() {
+		return status;
+	}
+
+	public void setStatus(Integer status) {
+		this.status = status;
+	}
+
 	@OneToMany(
 		mappedBy = "user",
 		fetch = FetchType.LAZY
