@@ -55,7 +55,7 @@ public class EditUserServlet extends HttpServlet {
 		
 		this.userDAO.update(entity);
 		
-		response.sendRedirect("/PT15307UD/users");
+		response.sendRedirect("/PT15307UD/admin/users");
 	}
 
 }
