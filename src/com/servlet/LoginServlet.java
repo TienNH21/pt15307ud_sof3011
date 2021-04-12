@@ -42,11 +42,16 @@ public class LoginServlet extends HttpServlet {
 		
 		if (entity == null) {
 			request.setAttribute("error", "Đăng nhập thất bại");
-			
+
 			response.sendRedirect("/PT15307UD/login");
+		} else {
+			// Lưu thông tin người dùng vào session
+			request.getSession().setAttribute("user", entity);
+			
+//			request.getSession().removeAttribute("user");
+
+			response.sendRedirect("/PT15307UD/users");
 		}
-		
-		response.sendRedirect("/PT15307UD/users");
 	}
 
 }

@@ -15,8 +15,8 @@ import com.entity.User;
 import com.utils.HibernateUtils;
 
 @WebServlet({
-	"/users",
-	"/users/delete",
+	"/admin/users",
+	"/admin/users/delete",
 })
 public class UsersServlet extends HttpServlet {
 	private UserDAO userDAO;
@@ -46,7 +46,8 @@ public class UsersServlet extends HttpServlet {
 		
 		request.setAttribute("listUser", listUser);
 		request.setAttribute("page", page);
-		request.getRequestDispatcher("/views/admin/users/index.jsp")
+		request.setAttribute("view", "/views/admin/users/index.jsp");
+		request.getRequestDispatcher("/views/layout.jsp")
 			.forward(request, response);
 	}
 

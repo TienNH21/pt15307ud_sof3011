@@ -19,7 +19,10 @@
 	        </li>
 	      </ul>
 	    </div>
+
+		<a class="btn btn-default">Logout</a>
 	  </div>
+	  
 	</nav>
 
 	<div class="row">
